@@ -1,4 +1,9 @@
 import React from 'react'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
+library.add(faTwitter, faFacebookSquare)
+
 
 export default () => (
   <section className="bg-gray-100 border-t border-gray-300 py-8 w-full">
@@ -7,10 +12,10 @@ export default () => (
         <div id="social-media" className="md:w-1/6">
           <p className="uppercase text-gray-600 font-semibold mb-2 sm:mt-4">Follow Us</p>
           <a href="https://twitter.com/nfhsdrama" target="_blank" rel="noopener noreferrer">
-            Twitter
+            <FontAwesomeIcon className="mr-4" style={{color: '#1DA1F2'}} icon={['fab', 'twitter']} size="2x" />
           </a>
-          <a href="https://www.facebook.com/nfhsdrama/" target="_blank" rel="noopener noreferrer">
-            Facebook
+          <a href="https://www.facebook.com/nfhsdrama5368/" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon style={{color: '#4267B2'}} icon={['fab', 'facebook-square']} size="2x" />
           </a>
           <a href="https://www.instagram.com/nfhsdrama" target="_blank" rel="noopener noreferrer">
           </a>
