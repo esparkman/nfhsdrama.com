@@ -13,15 +13,18 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-brands-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "gatsby": "^2.7.1",
     "gatsby-plugin-postcss": "^2.0.7",
+    "gatsby-source-contentful": "^2.0.63",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "dotenv": "^8.0.0",
     "prettier": "^1.17.1",
     "tailwindcss": "^1.0.1"
   },
