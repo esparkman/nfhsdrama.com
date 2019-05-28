@@ -8,7 +8,7 @@ export default () => (
         <img
           className="mx-auto"
           width="82"
-          src={"logo.png"}
+          src={"/logo.png"}
           alt="North Forsyth Theater Troupe 5368"
         />
       </Link>
