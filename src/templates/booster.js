@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 
@@ -10,8 +11,8 @@ export const query = graphql`
       position
       email
       profilePicture {
-        fluid {
-          ...GatsbyContentulFluid
+        fluid(maxWidth: 100, maxHeight: 100) {
+          ...GatsbyContentfulFluid
         }
       }
     }
@@ -21,11 +22,16 @@ export const query = graphql`
 const Booster = props => {
   return (
     <Layout>
-      <h1 className="font-semibold text-xl">
-        {props.data.contentfulBooster.position}
-      </h1>
-      <h3>{props.data.contentfulBooster.name}</h3>
-      <p>{props.data.contentfulBooster.email}</p>
+      <div className="md:flex bg-white border rounded-lg p-6 my-2">
+        <Img className="h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6" fluid={props.data.contentfulBooster.profilePicture.fluid} alt="User avatar" />
+        <div className="text-center md:text-left">
+          
+          <h2 className="text-lg">{props.data.contentfulBooster.name}</h2>
+          
+          <div className="text-purple-500">{props.data.contentfulBooster.position}</div>
+          <div className="text-gray-600">{props.data.contentfulBooster.email}</div>
+        </div>
+      </div>
     </Layout>
   )
 }
