@@ -1,16 +1,10 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-let activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+const dotenv = require("dotenv");
 
-console.log(`Using environment config: '${activeEnv}'`)
+if (process.env.ENVIRONMENT !== "production") {
+  dotenv.config();
+}
 
-require("dotenv").config({
-  path: `.env.${activeEnv}`,
-})
+const { spaceId, accessToken } = process.env;
 
 module.exports = {
   /* Your site config here */
