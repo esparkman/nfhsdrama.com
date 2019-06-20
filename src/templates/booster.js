@@ -9,6 +9,11 @@ export const query = graphql`
       name
       position
       email
+      profilePicture {
+        fluid {
+          ...GatsbyContentulFluid
+        }
+      }
     }
   }
 `
