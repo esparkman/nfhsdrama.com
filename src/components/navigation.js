@@ -40,7 +40,7 @@ export default () => (
           About
         </Link>
         <Link
-          to="/box-office"
+          to="/box_office"
           className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
         >
           Box Office
