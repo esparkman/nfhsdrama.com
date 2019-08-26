@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
+import Carousel from 'nuka-carousel'
 import Img from 'gatsby-image'
 
 const Gallery = () => {
@@ -11,7 +12,7 @@ const Gallery = () => {
             title
             images {
               fluid {
-                ...GatsbyContentfulFluid
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
@@ -21,13 +22,15 @@ const Gallery = () => {
   `)
 
   return (
-    <>
+    <Carousel autoplay={true}>
       {data.allContentfulGallery.edges.map((edge) => {
-        {edge.node.images.map((image, index) => {
-          return <Img alt="Heyo 1" src={image.fluid} key={index} />
-        })}
+        {
+          return edge.node.images.map((image, index) => {
+            return <Img fluid={image.fluid} key={index} />
+          }
+        )}
       })}
-    </>
+    </Carousel>
   )
 }
 
