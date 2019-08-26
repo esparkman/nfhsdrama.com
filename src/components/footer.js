@@ -39,7 +39,7 @@ export default () => (
               />
             </a>
             <a
-              href="https://www.instagram.com/nfhsdrama"
+              href="https://www.instagram.com/nfhsdramadept"
               target="_blank"
               rel="noopener noreferrer"
             >
