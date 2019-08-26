@@ -9,16 +9,15 @@ function Navigation() {
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <Link to="/">
           <img
-            className="mx-auto"
-            width="82"
+            className="mx-auto w-12 sm:w-20"
             src={"/logo.png"}
             alt="North Forsyth Theater Troupe 5368"
           />
         </Link>
         <Link to="/" className="cursor-pointer">
-          <span className="inline-block ml-4 font-normal text-xl tracking-tight">
-            <p className="">North Forsyth High Theatre</p>
-            <p className="text-base">Troupe #5368</p>
+          <span className="inline-block ml-4 font-normal text-sm md:text-xl tracking-tight">
+            <p>North Forsyth High Theatre</p>
+            <p>Troupe #5368</p>
           </span>
         </Link>
       </div>
