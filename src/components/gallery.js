@@ -11,7 +11,7 @@ const Gallery = () => {
           node {
             title
             images {
-              fluid {
+              fluid(maxHeight: 200, maxWidth: 400, quality: 100) {
                 ...GatsbyContentfulFluid_withWebp
               }
             }
@@ -22,7 +22,7 @@ const Gallery = () => {
   `)
 
   return (
-    <Carousel autoplay={true}>
+    <Carousel autoplay={true} wrapAround={true}>
       {data.allContentfulGallery.edges.map((edge) => {
         {
           return edge.node.images.map((image, index) => {
