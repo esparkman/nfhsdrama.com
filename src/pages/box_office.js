@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 const BoxOffice = props => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulShow {
+      allContentfulShow (sort: { fields: showTime }) {
         edges {
           node {
             id
@@ -19,6 +19,9 @@ const BoxOffice = props => {
               fluid(maxWidth: 100, maxHeight: 100) {
                 ...GatsbyContentfulFluid
               }
+            }
+            showTime {
+              eventTime
             }
           }
         }
