@@ -44,7 +44,7 @@ const BoxOffice = props => {
             { edge.node.boxOfficeArt ?
               <div className="relative pb-2/3">
                 <Img 
-                  className="absolute h-full w-full object-cover rounded-l mr-4"
+                  className="absolute object-cover rounded-l mr-4"
                   fixed={edge.node.boxOfficeArt.fixed}
                   alt="Box Office Art"
                 /> 
@@ -63,7 +63,7 @@ const BoxOffice = props => {
                   return (
                   <div className="flex flex-col pt-1 uppercase font-semibold text-purple-500 text-xs" key={show.eventTime}>
                     <span>{show.eventTime}</span>
-                    <a href={show.ticketUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg px-2 py-2 bg-nfhspurple text-white text-center mt-2">
+                    <a href={show.ticketUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg px-1 py-1 bg-nfhspurple text-white text-center text-xs mt-2 mx-2">
                       Buy Tickets
                     </a>
                   </div>
