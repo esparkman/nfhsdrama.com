@@ -6,44 +6,49 @@ import Layout from "../components/layout"
 const BoxOffice = props => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulShow (sort: { fields: showTime }) {
+      allContentfulShow (
+        sort: { fields: showTime },
+        filter: { status: { eq: true } } 
+      ) {
         edges {
           node {
             id
             title
-            ticketUrl
             description {
               description
             }
             boxOfficeArt {
-              fluid(maxWidth: 100, maxHeight: 100) {
-                ...GatsbyContentfulFluid
+              fixed(width: 300) {
+                ...GatsbyContentfulFixed
               }
             }
             showTime {
-              eventTime
+              eventTime(formatString: "MMMM Do, YYYY hh:mm A")
+              ticketUrl
             }
           }
         }
       }
     }
   `)
-  const ppTag = '<pp:tickets width="600" event-all="44443" data-etheme="000099"></pp:tickets>'
+
   return (
     <Layout>
       <h1 className="text-3xl">Box Office</h1>
       {data.allContentfulShow.edges.map(edge => {
         return (
           <div
-            className="md:flex bg-white border rounded-lg p-6 my-2"
+            className="md:flex bg-white border rounded-lg my-4"
             key={edge.node.id}
           >
             { edge.node.boxOfficeArt ?
-              <Img 
-                className="w-64 h-32 mx-auto md:mx-0 md:mr-6"
-                fluid={edge.node.boxOfficeArt.fluid}
-                alt="User avatar"
-              /> :
+              <div className="relative pb-2/3">
+                <Img 
+                  className="absolute h-full w-full object-cover rounded-l mr-4"
+                  fixed={edge.node.boxOfficeArt.fixed}
+                  alt="Box Office Art"
+                /> 
+              </div> :
               ''
             }
             <div className="text-center md:text-left">
@@ -53,12 +58,17 @@ const BoxOffice = props => {
               <div className="text-purple-500">
                 {edge.node.description ? edge.node.description.description : '' }
               </div>
-              <div className="pt-1 uppercase font-semibold text-purple-500">
-                <a href={edge.node.ticketUrl} target="_blank" rel="noopener noreferrer">
-                  Buy Tickets
-                </a>
-                
-                <div dangerouslySetInnerHTML={{ __html: ppTag }} />
+              <div className="mt-4 flex justify-between">
+                { edge.node.showTime.map(show => {
+                  return (
+                  <div className="flex flex-col pt-1 uppercase font-semibold text-purple-500" key={show.eventTime}>
+                    <span>{show.eventTime}</span>
+                    <a href={show.ticketUrl} target="_blank" rel="noopener noreferrer">
+                      Buy Tickets
+                    </a>
+                  </div>
+                  )
+                })}
               </div>
             </div>
           </div>
