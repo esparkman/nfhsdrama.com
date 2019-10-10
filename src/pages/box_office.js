@@ -51,19 +51,19 @@ const BoxOffice = props => {
               </div> :
               ''
             }
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left mx-6 my-4">
               <Link to={`/box_office/${edge.node.slug}`}>
-                <h2 className="text-lg">{edge.node.title}</h2>
+                <h2 className="text-lg pb-2">{edge.node.title}</h2>
               </Link>
-              <div className="text-purple-500">
+              <div className="text-purple-500 text-sm">
                 {edge.node.description ? edge.node.description.description : '' }
               </div>
               <div className="mt-4 flex justify-between">
                 { edge.node.showTime.map(show => {
                   return (
-                  <div className="flex flex-col pt-1 uppercase font-semibold text-purple-500" key={show.eventTime}>
+                  <div className="flex flex-col pt-1 uppercase font-semibold text-purple-500 text-xs" key={show.eventTime}>
                     <span>{show.eventTime}</span>
-                    <a href={show.ticketUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={show.ticketUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg px-2 py-2 bg-nfhspurple text-white text-center mt-2">
                       Buy Tickets
                     </a>
                   </div>
