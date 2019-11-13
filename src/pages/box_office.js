@@ -53,9 +53,8 @@ const BoxOffice = props => {
                 ''
               }
               <div className="text-center md:text-left mx-6 my-4">
-                <Link to={`/box_office/${edge.node.slug}`}>
-                  <h2 className="text-lg pb-2">{edge.node.title}</h2>
-                </Link>
+                <h2 className="text-lg pb-2">{edge.node.title}</h2>
+
                 <div className="text-purple-500 text-sm">
                   {edge.node.description ? edge.node.description.description : '' }
                 </div>
@@ -65,7 +64,7 @@ const BoxOffice = props => {
                     <div className="flex flex-col pt-1 uppercase font-semibold text-purple-500 text-xs" key={show.eventTime}>
                       <span>{show.eventTime}</span>
                       <a href={show.ticketUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg px-1 py-1 bg-nfhspurple text-white text-center text-xs mt-2 mx-2">
-                        Buy Tickets
+                      { show.ticketUrl ? 'Buy Tickets' : 'Tickets Unavailable' }
                       </a>
                     </div>
                     )
