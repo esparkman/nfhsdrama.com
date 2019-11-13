@@ -48,12 +48,6 @@ function Navigation() {
             Box Office
           </Link>
           <Link
-            to="/2019-2020-season"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-          >
-            2019-2020 Season
-          </Link>
-          <Link
             to="/classes"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >

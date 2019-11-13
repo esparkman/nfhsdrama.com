@@ -23,22 +23,24 @@ const Class = props => {
 
   return (
     <Layout>
-      <h1 className="text-3xl">Class Information</h1>
-      <article>
-        {data.allContentfulClass.edges.map(edge => {
-          return (
-            <section key={edge.node.id}>
-              <h2 className="font-semibold mb-1 underline">
-                {edge.node.title}
-              </h2>
-              <p>Last updated: {edge.node.publishedDate}</p>
-              <div className="my-4 list-disc">
-                {documentToReactComponents(edge.node.description.json)}
-              </div>
-            </section>
-          )
-        })}
-      </article>
+      <div className="mx-4">
+        <h1 className="text-3xl">Class Information</h1>
+        <article>
+          {data.allContentfulClass.edges.map(edge => {
+            return (
+              <section key={edge.node.id}>
+                <h2 className="font-semibold mb-1 underline">
+                  {edge.node.title}
+                </h2>
+                <p>Last updated: {edge.node.publishedDate}</p>
+                <div className="my-4 list-disc">
+                  {documentToReactComponents(edge.node.description.json)}
+                </div>
+              </section>
+            )
+          })}
+        </article>
+      </div>
     </Layout>
   )
 }

@@ -6,8 +6,8 @@ import { faTwitter, faFacebookSquare, faInstagram } from "@fortawesome/free-bran
 library.add(faTwitter, faFacebookSquare, faInstagram)
 
 export default () => (
-  <section className="bg-gray-100 border-t border-gray-300 py-8 w-full">
-    <div className="w-full mx-auto bg-wild-sand">
+  <section className="bg-gray-100 border-t border-gray-300 py-8">
+    <div className="w-full mx-auto bg-wild-sand absolute sticky inset-x-0 bottom-0">
       <div className="md:flex md:justify-around mb-6 mt-8 mx-8 pb-8 text-sm">
         <div id="social-media" className="md:w-1/6">
           <p className="uppercase text-gray-600 font-semibold mb-2 sm:mt-4">
