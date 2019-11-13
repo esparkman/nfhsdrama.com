@@ -35,6 +35,13 @@ export default props => {
 
   return (
     <Layout>
+      <div className="mx-4">
+        <h2 className="text-3xl font-extrabold">I need your guys with filler Content here.</h2>
+        <p>
+          These are the remaining shows for the Season. We need some fun helpful information to go
+          along with these guys.
+        </p>
+      </div>
       <div className="flex flex-wrap justify-between mx-auto">
         {data.allContentfulShow.edges.map(edge => {
           return (
