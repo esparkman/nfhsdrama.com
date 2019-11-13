@@ -36,6 +36,12 @@ const BoxOffice = props => {
     <Layout>
       <div className="mx-4">
         <h1 className="text-3xl">Box Office</h1>
+        <h2 className="text-3xl font-extrabold">I need your guys with filler Content here.</h2>
+        <p>
+          These are the remaining shows for the Season. We need some fun helpful information to go
+          along with these guys.
+        </p>
+      
         {data.allContentfulShow.edges.map(edge => {
           return (
             <div
